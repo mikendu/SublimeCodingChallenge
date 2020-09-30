@@ -13,7 +13,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declaration": true,
-    "baseUrl": ".",
+    "baseUrl": "."
   },
   "exclude": ["node_modules", "dist"]
 }
