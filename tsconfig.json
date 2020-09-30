@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "noImplicitReturns": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "baseUrl": ".",
+  },
+  "exclude": ["node_modules", "dist"]
+}
