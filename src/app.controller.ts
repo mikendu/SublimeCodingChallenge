@@ -18,7 +18,8 @@ export class AppController {
 
   @Get('/terms')
   public async getTerms(): Promise<object> {
-    return { terms: ['foobar'], count: 1 };
+    const termsList: string[] = await this.termsService.list();
+    return { terms: termsList, count: termsList.length };
   }
 
   @Post('/terms')

@@ -17,8 +17,6 @@ export class TermsService {
   }
 
   public async list(): Promise<string[]> {
-    const results: string[] = [];
-
     const searchResponse = await this.esClient.search({
       index: 'terms',
       size: 150, // page size picked kind of at random
@@ -29,14 +27,14 @@ export class TermsService {
       }
     }) as any;
 
-    const hits = searchResponse?.body?.hits;
+    const hits = searchResponse?.body?.hits?.hits;
     if (hits) {
-      hits.forEach((item: any) => {
+      return hits.map((item: any) => {
         const { term } = item._source;
-        results.push(term);
+        return term;
       });
     }
 
-    return results;
+    return [];
   }
 }
