@@ -4,3 +4,4 @@ jspm_packages/
 .env
 dist
 .idea/
+.DS_Store

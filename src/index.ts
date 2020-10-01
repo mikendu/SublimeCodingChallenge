@@ -1,10 +1,11 @@
 import { NestFactory, Reflector } from '@nestjs/core';
-import { ClassSerializerInterceptor, Logger } from '@nestjs/common';
+import { ClassSerializerInterceptor, Logger, ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 
 async function run() {
   const port = 8080;
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
   const logger: Logger = app.get(Logger);
 
