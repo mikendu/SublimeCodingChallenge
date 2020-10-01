@@ -29,7 +29,8 @@ class MessageService {
     await this.esClient.index({
       id: messageId,
       index: 'messages',
-      body: mdmMessage
+      body: mdmMessage,
+      refresh: true
     });
     return messageId;
   }

@@ -40,6 +40,7 @@ export class AppController {
       results.hits.forEach((hit: SearchHit) => {
         matchedTerms = matchedTerms.concat(hit.matched_queries);
       });
+      matchedTerms = matchedTerms.filter((item, index) => matchedTerms.indexOf(item) === index);
       return { match: true, terms: matchedTerms };
     }
     return { match: false, terms: [] };
